@@ -1,0 +1,10 @@
+torch
+moviepy
+opencv-python
+pillow
+numpy
+transformers
+diffusers
+safetensors
+peft
+decord
