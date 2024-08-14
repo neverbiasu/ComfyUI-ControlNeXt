@@ -41,7 +41,7 @@ from diffusers.models.attention_processor import (
     XFormersAttnProcessor,
 )
 from diffusers.pipelines.controlnet.multicontrolnet import MultiControlNetModel
-from models.controlnet import ControlNetModel
+from ..models.controlnet import ControlNetModel
 from diffusers.models.lora import adjust_lora_scale_text_encoder
 from diffusers.schedulers import KarrasDiffusionSchedulers
 from diffusers.utils import (

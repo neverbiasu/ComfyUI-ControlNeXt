@@ -3,9 +3,9 @@ import torch
 from torch import nn
 from diffusers import UniPCMultistepScheduler, AutoencoderKL
 from safetensors.torch import load_file
-from pipeline.pipeline_controlnext import StableDiffusionXLControlNeXtPipeline
-from models.unet import UNet2DConditionModel, UNET_CONFIG
-from models.controlnet import ControlNetModel
+from ..pipeline.pipeline_controlnext import StableDiffusionXLControlNeXtPipeline
+from ..models.unet import UNet2DConditionModel, UNET_CONFIG
+from ..models.controlnet import ControlNetModel
 from . import utils
 
 
