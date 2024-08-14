@@ -1,4 +1,4 @@
-from node import ControlNextPipelineConfig, ControlNextSDXL
+from .node import ControlNextPipelineConfig, ControlNextSDXL
 
 NODE_CLASS_MAPPINGS = {
     "ControlNextPipelineConfig": ControlNextPipelineConfig,
