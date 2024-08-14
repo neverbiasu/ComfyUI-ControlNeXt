@@ -5,7 +5,7 @@ import numpy as np
 import argparse
 
 from PIL import Image
-from utils import preprocess, tools, model_download
+from .utils import preprocess, tools, model_download
 
 class ControlNextPipelineConfig:
     def __init__(self):
