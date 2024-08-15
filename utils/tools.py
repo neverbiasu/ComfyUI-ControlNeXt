@@ -28,7 +28,7 @@ def get_pipeline(
         print(f"loading controlnet from {controlnet_model_name_or_path}")
         controlnet = ControlNetModel()
         if controlnet_model_name_or_path is not None:
-            utils.load_safetensors(controlnet, controlnet_model_name_or_path)
+            utils.load_safetensors(controlnet, controlnet_model_name_or_path, device)
         else:
             controlnet.scale = nn.Parameter(torch.tensor(0.), requires_grad=False)
         controlnet.to(device, dtype=torch.float32)

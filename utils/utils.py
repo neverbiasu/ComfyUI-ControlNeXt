@@ -175,9 +175,9 @@ def contains_unet_keys(state_dict):
     return any(k.startswith(UNET_KEY_PREFIX) for k in state_dict.keys())
 
 
-def load_safetensors(model, safetensors_path, strict=True, load_weight_increasement=False):
+def load_safetensors(model, safetensors_path, device, strict=True, load_weight_increasement=False):
     if not load_weight_increasement:
-        state_dict = load_file(safetensors_path)
+        state_dict = load_file(safetensors_path, device=device)
         model.load_state_dict(state_dict, strict=strict)
     else:
         state_dict = load_file(safetensors_path)
