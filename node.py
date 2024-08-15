@@ -8,6 +8,13 @@ from PIL import Image
 from .utils import preprocess, tools
 from .utils.model_download import ModelDownload
 
+def model_check(model_name_or_path):
+    model_download = ModelDownload()
+    if model_download.check_model_exists(model_name_or_path):
+        return
+    else:
+        model_download.download_model()
+
 class ControlNextPipelineConfig:
     def __init__(self):
         self.pipeline = None
@@ -34,18 +41,12 @@ class ControlNextPipelineConfig:
     FUNCTION = "load_pipeline"
     CATEGORY = "ControlNet"
 
-    def model_check(model_name_or_path):
-        model_download = ModelDownload()
-        if model_download.check_model_exists(model_name_or_path):
-            return
-        else:
-            model_download.download_model()
-
     def load_pipeline(self, pretrained_model_name_or_path, controlnet_model_name_or_path, unet_model_name_or_path, 
                       vae_model_name_or_path, lora_path, load_weight_increasement, enable_xformers, revision, 
                       variant, hf_cache_dir, device):
-        self.model_check(controlnet_model_name_or_path)
-        self.model_check(unet_model_name_or_path)
+
+        model_check(controlnet_model_name_or_path)
+        model_check(unet_model_name_or_path)
 
         self.pipeline = tools.get_pipeline(
             pretrained_model_name_or_path,
