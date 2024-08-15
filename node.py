@@ -9,8 +9,8 @@ from .utils import preprocess, tools
 from .utils.model_download import ModelDownload
 
 def model_check(model_name_or_path):
-    model_download = ModelDownload()
-    if model_download.check_model_exists(model_name_or_path):
+    model_download = ModelDownload(model_name_or_path)
+    if model_download.check_model_exists():
         return
     else:
         model_download.download_model()
