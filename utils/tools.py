@@ -13,14 +13,14 @@ def get_pipeline(
     pretrained_model_name_or_path,
     unet_model_name_or_path,
     controlnet_model_name_or_path,
-    vae_model_name_or_path=None,
-    lora_path=None,
-    load_weight_increasement=False,
-    enable_xformers_memory_efficient_attention=False,
-    revision=None,
-    variant=None,
-    hf_cache_dir=None,
-    device=None,
+    vae_model_name_or_path,
+    lora_path,
+    load_weight_increasement,
+    enable_xformers_memory_efficient_attention,
+    revision,
+    variant,
+    hf_cache_dir,
+    device,
 ):
     pipeline_init_kwargs = {}
 
