@@ -14,6 +14,7 @@ class model_download:
         elif model_name_or_path == "pretrained/vidit_depth/unet.safetensors":
             file_name = "ControlAny-SDXL/vidit_depth/controlnet.safetensors"
         hf_hub_download(repo_id="Pbihao/ControlNeXt", filename=file_name, output_dir=model_name_or_path)
+
     def check_model_exists(model_name_or_path: str):
         if os.path.exists(model_name_or_path):
             return True
