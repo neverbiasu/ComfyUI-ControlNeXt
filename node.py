@@ -34,7 +34,7 @@ class ControlNextPipelineConfig:
     FUNCTION = "load_pipeline"
     CATEGORY = "ControlNet"
 
-    def model_check(self, model_name_or_path):
+    def model_check(model_name_or_path):
         model_download = ModelDownload()
         if model_download.check_model_exists(model_name_or_path):
             return
