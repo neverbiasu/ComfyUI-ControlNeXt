@@ -5,12 +5,13 @@ import numpy as np
 import argparse
 
 from PIL import Image
-from .utils import preprocess, tools, model_download
+from .utils import preprocess, tools
+from .utils.model_download import ModelDownload
 
 class ControlNextPipelineConfig:
     def __init__(self):
         self.pipeline = None
-        self.model_download = model_download()
+        self.model_download = ModelDownload()
 
     @classmethod
     def INPUT_TYPES(s):
