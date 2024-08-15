@@ -3,7 +3,7 @@ import argparse
 
 from huggingface_hub import hf_hub_download
 
-class model_download:
+class ModelDownload:
     def download_model(model_name_or_path: str):
         if model_name_or_path == "pretrained/anime_canny/unet.safetensors":
             file_name = "ControlAny-SDXL/anime_canny/controlnet.safetensors"
