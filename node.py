@@ -11,7 +11,6 @@ from .utils.model_download import ModelDownload
 class ControlNextPipelineConfig:
     def __init__(self):
         self.pipeline = None
-        self.model_download = ModelDownload()
 
     @classmethod
     def INPUT_TYPES(s):
@@ -36,10 +35,11 @@ class ControlNextPipelineConfig:
     CATEGORY = "ControlNet"
 
     def model_check(self, model_name_or_path):
-        if self.model_download.check_model_exists(model_name_or_path):
+        model_download = ModelDownload()
+        if model_download.check_model_exists(model_name_or_path):
             return
         else:
-            self.model_download.download_model()
+            model_download.download_model()
 
     def load_pipeline(self, pretrained_model_name_or_path, controlnet_model_name_or_path, unet_model_name_or_path, 
                       vae_model_name_or_path, lora_path, load_weight_increasement, enable_xformers, revision, 
