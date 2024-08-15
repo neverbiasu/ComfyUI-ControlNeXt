@@ -48,6 +48,8 @@ class ControlNextPipelineConfig:
         model_check(controlnet_model_name_or_path)
         model_check(unet_model_name_or_path)
 
+        print(f"Using device: {device}")
+
         self.pipeline = tools.get_pipeline(
             pretrained_model_name_or_path,
             unet_model_name_or_path,
